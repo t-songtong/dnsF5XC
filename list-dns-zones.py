@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import requests
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def readSecret(secretPath):
     with open(secretPath) as f:
         mySecret = f.readline().strip()
