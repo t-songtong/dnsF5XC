@@ -13,6 +13,9 @@ from typing import cast, Union, Any
 from tools.helpers import *
 from tools.f5 import *
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def main():
     parser = argparse.ArgumentParser(description="Argument Parser") 
     parser.add_argument("domain", type=str, help="Domain to migrate")
