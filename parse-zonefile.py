@@ -14,7 +14,7 @@ def main():
     api_url = "https://{}.console.ves.volterra.io/api/config/dns/namespaces/system/dns_zones".format(readSecret(".secrets/.consoleDomain"))
 
     api_headers = {
-        "Authorization" :   "{}".format(readSecret(".secrets/.apiToken")),
+        "Authorization" :   "APIToken {}".format(readSecret(".secrets/.apiToken")),
         "Accept"        :   "application/json"
     }
 
