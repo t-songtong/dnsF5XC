@@ -10,6 +10,9 @@ import sys
 import argparse
 import json
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def main():
     parser = argparse.ArgumentParser(description="Dumps zone from provided dns server to screen.") 
     parser.add_argument("domain", type=str, help="Domain to dump")
