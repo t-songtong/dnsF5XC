@@ -3,6 +3,9 @@ import requests
 import argparse
 from typing import cast, Union, Any
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def readSecret(secretPath):
     with open(secretPath) as f:
             mySecret = f.readline().strip()
