@@ -15,6 +15,9 @@ api_headers = {
 response = requests.get(api_url, headers=api_headers, verify=False)
 #print (response.json())
 
-json = response.json()
-for item in json['items']:
-    print(item['name'])
+if response.status_code == 200:
+   json = response.json()
+   for item in json['items']:
+       print(item['name'])
+else:
+   print(f"Request failed with status code: {response.status_code}")
