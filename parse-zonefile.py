@@ -29,6 +29,7 @@ def main():
         zoneName = re.sub('\.zf', '', os.path.basename(filename))
         try:
            dnsZone = dns.zone.from_file(os.path.join(os.getcwd()+"/"+filename),zoneName)
+           #failed if not specified origin argument (default=none, and read from $ORIGIN value), or even send '.' as origin, failed too.
            #dnsZone = dns.zone.from_file(f,filename)
            #dnsZone = dns.zone.from_file(f,filename+'.')
         except Exception as e:
